@@ -1,0 +1,83 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">
+    {{ isEdit ? "Update" : "Create" }} Product
+  </h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group mb-4">
+            <label for="name">Name</label>
+            <input id="name" class="form-control" formControlName="name" />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="category">Category</label>
+            <input
+              id="category"
+              class="form-control"
+              formControlName="category"
+            />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="sku">SKU</label>
+            <input id="sku" class="form-control" formControlName="sku" />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group mb-4">
+            <label for="cost">Cost</label>
+            <input
+              id="cost"
+              type="number"
+              class="form-control"
+              formControlName="cost"
+            />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="stockQuantity">Stock Quantity</label>
+            <input
+              id="stockQuantity"
+              type="number"
+              class="form-control"
+              formControlName="stockQuantity"
+            />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="rating">Rating</label>
+            <input
+              id="rating"
+              type="number"
+              class="form-control"
+              formControlName="rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+    (click)="onSubmit()"
+  >
+    {{ isEdit ? "Update" : "Create" }}
+  </button>
+</div>
