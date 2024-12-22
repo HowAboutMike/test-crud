@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { PRODUCTS } from '../../../shared/consts/mocks';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../../shared/product.model';
 import { ProductEditModalComponent } from '../product-edit-modal/product-edit-modal.component';
